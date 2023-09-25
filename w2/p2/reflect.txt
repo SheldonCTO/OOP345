@@ -1,0 +1,17 @@
+1. 	Copy and move are different concept. copy Operator need to allocate memory and 
+	do the deep copy. 
+	Move operator only need to move the value and delete and obj after moving step.
+	So the move operator processing time will be faster than copy operator.
+
+2.	In function "AirportLog::AirportLog(string fileName)". we need to re-read the file
+	after count the file length. but at this moment, I have no idea how to do, if no need 
+	re read the file.
+
+3.	A steady_clock is always provide a steady time and only move forward and will not change
+    even a system_clock had changed. and steady_clock will not Guarantee the time is same with
+	the real time. And the steady_clock provide a consistent time, even in different
+	system. So it always uses for count the program processing speed.
+
+	system_clock is relate to the real-time. if we system move to different time zone.
+	system_clock will change to the current time zone and time. which mean the clock can 
+	be backward to the past 

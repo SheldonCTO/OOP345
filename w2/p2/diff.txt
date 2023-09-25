@@ -1,0 +1,14 @@
+In line number 246 of your output:
+The output should be:
+...........Longitude : -86.7536......................
+                              ^
+But your output is: 
+...........Longitude : -86.7535......................
+                              ^
+
+Unmatched character details:
+The character in column 31 is supposed to be:
+  [6] ASCII code(54)
+but you printed
+  [5] ASCII code(53)
+
