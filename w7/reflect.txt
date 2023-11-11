@@ -1,0 +1,27 @@
+this workshop is really interesting. I need to using algorithm to handle the object value.
+In this workshop, I used 8 different algorithm methods to loop the object value.
+
+1.sort() in sort function. it sorts the field from Covid, And this function have 2 requirements 
+first is sorting the field, and  when the first comparing fields are match, it will sort the noOfDeath.
+i set the lambda expression to handle this function, I setup all the condition in lambda
+if (field == "country") sorting the country field, if the current country and next country are same.
+sorting the covid.noOfDeaths < next.noOfDeaths.
+
+2.find_if() in inCollection function. find_if() is  a bool function. we can use it to check the condition
+and return true or not. I set 3 condition in lambda , city, variant and noOfDeaths case. 
+and check the noOfDeaths > the no of deaths requirement. 
+
+3.copy_if() in getListForDeaths. we need to return the "list", so I using copy_if from m_covid, and set the condition by lambda. [&](const Covid &death) { return death.noOfDeaths >= deaths; }. If match condition insert it to the new list and return.
+
+4.back_inserter() in getListForDeaths. I used <iterator> library function back_inserter to insert the data to the new list. And in this case I can't use push_back. because push_back function can't use with vector.
+
+5.transform() in updateStatus() function. we can use Transform function to change the specified member value with match the condition. In updatedStatus. The m-covid.status is default "General",
+And after access updateStatus(), m-covid.status may change to EPIDEMIC, EARLY or MILD.
+
+6. ostream_iterator() in display function. I used <iterator> library ostream_iterator function to specify for passing the elements to stream& out to display.
+
+7. accumulate() in display function. I used it for calculate the sum of the case and death number between the range. And I set lambda for checking the  range requirement.
+
+
+And In this workshop make me more understand the different between access function and helper function. I have no idea why only after run getListForDeaths function, my output will display an extra empty line between each element. I spend at less 2hours to find the error is about the relation between display() and operator<<. Because I added "\n" in operator<< , and ostream_iterator<Covid>(out) without  \n. Operator<< is only for help display to cout the "out".
+All the function operation must run in display(). So I just added (out, "\n") in ostream_iterator, and remove \n  in   operator<<. 
